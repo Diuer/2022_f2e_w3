@@ -6,6 +6,90 @@
   background: #181E2A;
   box-sizing: border-box;
 
+  .content {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 48px;
+    z-index: 1;
+
+    .role-icon {
+      width: 176px;
+    }
+
+    .role-speaking-dialog {
+      position: relative;
+      width: 1044px;
+      min-height: 16px;
+      max-height: 112px;
+      padding: 16px 32px;
+      background: linear-gradient(0deg, rgba(255, 82, 165, 0.3), rgba(255, 82, 165, 0.3)), #181E2A;;
+      box-sizing: border-box;
+
+      .logo-jira {
+        position: absolute;
+        right: 114px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .challenge-container {
+    display: flex;
+    width: calc(100% - 144px);
+    height: 512px;
+    margin: 56px 72px 0 72px;
+    background: #2F343F;
+
+    .challenge-question {
+      width: 50%;
+
+      .title {
+        display: inline-flex;
+        width: 100%;
+        align-items: center;
+        margin: 16px;
+
+        h4 {
+          margin-left: 16px;
+        }
+      }
+
+      .challenge-item-container {
+        display: inline-block;
+        margin: 16px 32px;
+        padding: 16px 32px;
+        border: 8px solid #FF52A5;
+        box-sizing: border-box;
+
+        .challenge-item-title {
+          font-size: 24px;
+          color: #fff;
+        }
+
+        .challenge-item-description {
+          margin-top: 8px;
+          font-size: 12px;
+          color: #fff;
+        }
+      }
+    }
+
+    .challenge-answer {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      .challenge-answer-container {
+        height: 90px;
+        margin: 16px 32px;
+        border: 8px dashed #FFFFFF;
+        box-sizing: border-box;
+      }
+    }
+  }
+
   .btn-container {
     position: fixed;
     bottom: 40px;

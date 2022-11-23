@@ -1,12 +1,11 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
 
-import tableBg from "../assets/table.png";
 import roleIcon from "../assets/PO.png";
 
 import "../style/ProductBacklogPage.scss";
-import { useEffect } from "react";
 
 gsap.registerPlugin(TextPlugin);
 
