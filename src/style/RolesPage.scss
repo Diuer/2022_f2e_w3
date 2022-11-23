@@ -1,0 +1,45 @@
+.roles-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding-top: 48px;
+  background: #181E2A;
+  box-sizing: border-box;
+
+  .title {
+    margin-top: 72px;
+    text-align: center;
+  }
+
+  .role-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 56px 0;
+
+    .role-item {
+      width: 352px;
+      
+      .role-avatar {
+        width: 100%;
+        margin: 16px 0;
+      }
+
+      h3 {
+        margin: 16px 0;
+        padding: 0 32px;
+        box-sizing: border-box;
+      }
+
+      h4 {
+        padding: 0 32px;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .btn-container {
+    position: fixed;
+    bottom: 40px;
+    right: 60px;
+  }
+}

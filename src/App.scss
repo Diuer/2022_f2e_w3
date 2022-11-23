@@ -1,38 +1,339 @@
+$main-color: #0693E3;
+$secondary-color: #FF52A5;
+$green-color: #7CFF01;
+$yellow-color: #FFF205;
+
+$gray-700: #454545;
+$gray-600: #5F5F5F;
+$gray-500: #999999;
+$gray-400: #AAAAAA;
+$gray-300: #D0D0D0;
+$gray-200: #E3E3E3;
+
+h1, h2, h3, h4, h5, h6, button, p, span, input {
+  margin: 0;
+  font-weight: normal;
+}
+
+#root {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  overflow: hidden;
+}
+
+// General
+h1 {
+  font-size: 60px;
+  line-height: 80;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 64px;
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 52px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+h5, p {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.init-opacity-0 {
+  display: none;
+  opacity: 0;
+}
+
+.small-btn {
+  position: relative;
+  width: 84px;
+  height: 48px;
+  margin: 0 auto;
+  border: none;
+  font-size: 12px;
+  color: #fff;
+  background: $main-color;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.4);
+    z-index: 1;
+  }
+}
+
+.medium-btn {
+  position: relative;
+  width: 152px;
+  height: 80px;
+  margin: 0 auto;
+  border: none;
+  font-size: 24px;
+  color: #fff;
+  background: $main-color;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.4);
+    z-index: 1;
+  }
+}
+
+.large-btn {
+  position: relative;
+  width: 244px;
+  height: 96px;
+  margin: 0 auto;
+  border: none;
+  font-size: 36px;
+  color: #fff;
+  background: $main-color;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.4);
+    z-index: 1;
+  }
+}
+
+.btn-container {
+  .btn {
+    margin: 0 14px;
+  }
+}
+
+.btn {
+  &.auto-width {
+    width: auto;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+}
+
 .App {
-  text-align: center;
-}
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .loading-icon {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+    
+  .device-suggestion {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #181E2A;
+    z-index: 9999;
   }
-  to {
-    transform: rotate(360deg);
+
+  .progress-bar {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 48px;
+    background-color: $gray-700;
+    z-index: 9999;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 16px;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .progress-bg {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      height: 100%;
+      background: $main-color;
+    }
+
+    .progress-icon {
+      position: relative;
+      left: -100%;
+      z-index: 1;
+    }
+
+    &.percentage-1 {
+      .progress-bg {
+        left: 0;
+        width: calc(1 / 9 * 100%);
+      }
+
+      .progress-icon {
+        left: calc(1 / 9 * 100%);
+        transform: translateX(calc(-50% + 5px));
+      }
+    }
+    
+    &.percentage-2 {
+      .progress-bg {
+        left: 0;
+        width: calc(2 / 9 * 100%);
+      }
+
+      .progress-icon {
+        left: calc(2 / 9 * 100%);
+        transform: translateX(calc(-50% + 5px));
+      }
+    }
+    
+    &.percentage-3 {
+      .progress-bg {
+        left: 0;
+        width: calc(3 / 9 * 100%);
+      }
+
+      .progress-icon {
+        left: calc(3 / 9 * 100%);
+        transform: translateX(calc(-50% + 5px));
+      }
+    }
+    
+    &.percentage-4 {
+      .progress-bg {
+        left: 0;
+        width: calc(4 / 9 * 100%);
+      }
+
+      .progress-icon {
+        left: calc(4 / 9 * 100%);
+        transform: translateX(calc(-50% + 5px));
+      }
+    }
+    
+    &.percentage-5 {
+      .progress-bg {
+        left: 0;
+        width: calc(5 / 9 * 100%);
+      }
+
+      .progress-icon {
+        left: calc(5 / 9 * 100%);
+        transform: translateX(calc(-50% + 5px));
+      }
+    }
+    
+    &.percentage-6 {
+      .progress-bg {
+        left: 0;
+        width: calc(6 / 9 * 100%);
+      }
+
+      .progress-icon {
+        left: calc(6 / 9 * 100%);
+        transform: translateX(calc(-50% + 5px));
+      }
+    }
+    
+    &.percentage-7 {
+      .progress-bg {
+        left: 0;
+        width: calc(7 / 9 * 100%);
+      }
+
+      .progress-icon {
+        left: calc(7 / 9 * 100%);
+        transform: translateX(calc(-50% + 5px));
+      }
+    }
+    
+    &.percentage-8 {
+      .progress-bg {
+        left: 0;
+        width: calc(8 / 9 * 100%);
+      }
+
+      .progress-icon {
+        left: calc(8 / 9 * 100%);
+        transform: translateX(calc(-50% + 5px));
+      }
+    }
+    
+    &.percentage-9 {
+      .progress-bg {
+        left: 0;
+        width: calc(9 / 9 * 100%);
+      }
+
+      .progress-icon {
+        left: calc(9 / 9 * 100%);
+        transform: translateX(calc(-50% + 5px));
+      }
+    }
   }
 }
