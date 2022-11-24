@@ -1,5 +1,7 @@
 import { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 
 import HomePage from "./pages/HomePage";
 import RolesPage from "./pages/RolesPage";
