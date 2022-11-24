@@ -7,6 +7,8 @@ import HomePage from "./pages/HomePage";
 import RolesPage from "./pages/RolesPage";
 import ProductBacklogPage from "./pages/ProductBacklogPage";
 import ChallengePage from "./pages/ChallengePage";
+import SprintPlanningPage from "./pages/SprintPlanningPage";
+import FightingPage from "./pages/FightingPage";
 
 import loadingIcon from "./assets/Rocket-ver.png";
 import progressIcon from "./assets/Rocket-hor.png";
@@ -43,6 +45,9 @@ const App = () => {
             <Route path="/roles" element={<RolesPage />} />
             <Route path="/product-backlog" element={<ProductBacklogPage />} />
             <Route path="/challenge" element={<ChallengePage />} />
+            <Route path="/sprint-planning" element={<SprintPlanningPage />} />
+            <Route path="/fighting" element={<FightingPage />} />
+            <Route path="/sprint-short" element={<></>} />
           </Routes>
         </Router>
       </Suspense>
