@@ -43,7 +43,7 @@ const DropItem = ({
   }
   return (
     <div
-      className="challenge-answer-container"
+      className={cn("challenge-answer-container", { isOver })}
       ref={drop}
       data-handler-id={handlerId}
     >

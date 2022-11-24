@@ -139,6 +139,7 @@ const ChallengePage = () => {
               <DragItem key={index} columnIndex={index} {...item} />
             ))}
           </div>
+          <div className="priority-container"></div>
           <div className="challenge-answer">
             {dropData.map((item, index) => (
               <DropItem

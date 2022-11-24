@@ -83,6 +83,35 @@
         transform: rotate(-10deg);
       }
     }
+
+    .priority-container {
+      position: relative;
+      display: inline-block;
+      width: 68px;
+      height: 100%;
+      background: #5F5F5F;
+
+      &::before {
+        position: absolute;
+        content: '優先度高';
+        top: -35px;
+        width: 104px;
+        left: -50%;
+        transform-origin: center center;
+        transform: rotate(-90deg) translate(-50%, 50%);
+      }
+
+      &::after {
+        position: absolute;
+        content: '優先度低';
+        display: block;
+        bottom: 0;
+        width: 104px;
+        left: -50%;
+        transform-origin: center center;
+        transform: rotate(-90deg) translate(50%, 50%);
+      }
+    }
     
     .challenge-answer {
       display: flex;
@@ -95,8 +124,13 @@
         align-items: center;
         height: 90px;
         margin: 16px 32px;
+        opacity: 0.3;
         border: 8px dashed #FFFFFF;
         box-sizing: border-box;
+
+        &.isOver {
+          opacity: 1;
+        }
       }
     }
   }
