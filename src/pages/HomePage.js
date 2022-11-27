@@ -15,7 +15,7 @@ const HomePage = () => {
     timeline
       .to(".welcome-dialog h3", {
         text: "哈囉，歡迎加入 TT 資訊！ <br />在正式加入專案開發之前，需要請你先了解 Scrum 的流程與精神！<br />請接受挑戰任務，成功通過 Scrum 新手村的挑戰任務吧～",
-        duration: 15,
+        duration: 10,
       })
       .to(".large-btn", {
         display: "block",
