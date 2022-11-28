@@ -93,10 +93,27 @@
       }
 
       &.isDragging {
-        background: #FFF205;
+        color: #454545;
         border: 8px solid #FFFFFF;
+        background: #FFF205;
         box-shadow: 8px 8px 0px rgba(255, 255, 255, 0.32);
         transform: rotate(-10deg);
+        z-index: 1;
+        
+        .challenge-item-title,
+        .challenge-item-description { 
+          color: #454545;
+        }
+
+        .challenge-item-point {
+          span.point {
+            color: #454545;
+          }
+          
+          span.square {
+            background: #454545;
+          }
+        }
       }
     }
 

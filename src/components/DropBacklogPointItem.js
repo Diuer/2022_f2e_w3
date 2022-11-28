@@ -29,11 +29,9 @@ const DropItem = ({
         handlerId: monitor.getHandlerId(),
         isOver: monitor.isOver(),
         canDrop: monitor.canDrop(),
-        hover: monitor.isOver({ shallow: false }),
       };
     },
     drop: (item) => onDrop({ from: item, to: dropIndex }),
-    hover: (item) => onHover(item),
   });
 
   if (isDone) {

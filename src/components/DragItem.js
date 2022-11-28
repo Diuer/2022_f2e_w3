@@ -1,19 +1,23 @@
 import cn from "clsx";
 import { useEffect } from "react";
 import { useDrag, useDrop, DragSource, DragPreviewImage } from "react-dnd";
+import { getEmptyImage } from "react-dnd-html5-backend";
 
 // import "../style/DragItem.scss";
 
 const DragItem = ({ type, id, columnIndex, title, description }) => {
   // 拖曳
-  // TODO: 拖曳樣式
-  const [{ isDragging }, drag, dragPreview] = useDrag(() => ({
+  const [{ isDragging }, drag, dragPreview] = useDrag({
     type: "task-item",
     item: { id, columnIndex },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
-  }));
+  });
+
+  useEffect(() => {
+    dragPreview(getEmptyImage(), { captureDraggingState: true });
+  }, [dragPreview]);
 
   return (
     <>

@@ -10,6 +10,7 @@ import logoJira from "../assets/logo-jira.png";
 import "../style/ChallengePage.scss";
 import DragItem from "../components/DragItem";
 import DropItem from "../components/DropItem";
+import CustomDragLayer from "../components/CustomDragLayer";
 
 function DraggableHouse({ connectDragSource, connectDragPreview }) {
   return (
@@ -130,6 +131,7 @@ const ChallengePage = () => {
           </div>
         </div>
         <div className="challenge-container">
+          <CustomDragLayer data={dragData} />
           <div className="challenge-question">
             <div className="title">
               <h3>產品待辦清單</h3>
