@@ -39,22 +39,16 @@ const App = () => {
             alt="progress-icon"
           />
         </div>
-        <Router>
+        <Router basename="/2022_f2e_w3">
           <Routes>
-            <Route exact path="/2022_f2e_w3/" element={<HomePage />} />
-            <Route path="/2022_f2e_w3/home" element={<HomePage />} />
-            <Route path="/2022_f2e_w3/roles" element={<RolesPage />} />
-            <Route
-              path="/2022_f2e_w3/product-backlog"
-              element={<ProductBacklogPage />}
-            />
-            <Route path="/2022_f2e_w3/challenge" element={<ChallengePage />} />
-            <Route
-              path="/2022_f2e_w3/sprint-planning"
-              element={<SprintPlanningPage />}
-            />
-            <Route path="/2022_f2e_w3/fighting" element={<FightingPage />} />
-            <Route path="/2022_f2e_w3/sprint-short" element={<></>} />
+            <Route exact path="/" element={<HomePage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/roles" element={<RolesPage />} />
+            <Route path="/product-backlog" element={<ProductBacklogPage />} />
+            <Route path="/challenge" element={<ChallengePage />} />
+            <Route path="/sprint-planning" element={<SprintPlanningPage />} />
+            <Route path="/fighting" element={<FightingPage />} />
+            <Route path="/sprint-short" element={<></>} />
           </Routes>
         </Router>
       </Suspense>
